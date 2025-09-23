@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Climaster": {
+    "spotifeio": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -28,7 +28,12 @@
             ],
             "styles": [
               "src/styles.scss"
-            ]
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/styles"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -44,7 +49,13 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "src/envriroment/enviroment.ts",
+                  "with": "src/envriroment/enviroment.prod.ts"
+                }
+              ]
             },
             "development": {
               "optimization": false,
@@ -55,13 +66,17 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "host": "127.0.0.1",
+            "port": 4200
+          },
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Climaster:build:production"
+              "buildTarget": "spotifeio:build:production"
             },
             "development": {
-              "buildTarget": "Climaster:build:development"
+              "buildTarget": "spotifeio:build:development"
             }
           },
           "defaultConfiguration": "development"
