@@ -4,6 +4,6 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('./clima.component')
-        .then(p => p.ClimaComponent)
+        .then(r => r.ClimaComponent)
   }
 ];

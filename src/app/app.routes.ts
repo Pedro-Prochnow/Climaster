@@ -6,8 +6,13 @@ export const routes: Routes = [
     redirectTo: 'clima',
     pathMatch: 'full'
   },
+
   {
     path: 'clima',
-    loadChildren: () => import('./pages/clima/clima.routes').then(rota => rota.routes)
+    loadChildren: () => import('./pages/clima/clima.routes').then(rota => rota.routes),
+  },
+  {
+    path: 'pesquisa',
+    loadChildren: () => import('./pages/pesquisa/pesquisa.routes').then(rota => rota.PesquisaRoutes)
   },
 ];
