@@ -6,7 +6,7 @@
   display: block;
   background-image: url('https://i.postimg.cc/d3NzRbQV/download.png');
   color: #cb0076;
-  font-family: 'roboto', sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .login {
@@ -17,15 +17,21 @@
   padding: 24px;
 }
 
-.card {
-  width: 100%;
-  max-width: 420px;
-  background: rgb(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 32px;
-  text-align: center;
-  backdrop-filter: blur(6px);
+  .card {
+    width: 100%;
+    max-width: 420px;
+    background: rgb(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgb(239, 14, 179);
 }
 
 .logo {
@@ -56,15 +62,5 @@
 
 .btn-primary:hover {
   transform: translate(-1px);
-  box-shadow: 0 10px 28px rgba(185, 29, 125, 0.45);
-}
-
-.footer {
-  position: absolute;
-  bottom: 16px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #a6a6a6;
+  box-shadow: 0 10px 28px rgba(235, 23, 153, 0.985);
 }
