@@ -13,7 +13,10 @@
         <p class="desc">{{ clima.description | titlecase }}</p>
       </div>
 
-
+      <div class="minmax">
+        <span>Min {{dadosClima()?.main?.temp_min | number: '1.0-0'}}°C</span>
+        <span>Max {{dadosClima()?.main?.temp_max | number: '1.0-0'}}°C</span>
+      </div>
 
       <button (click)="navegarParaTelaDePesquisa()">Pesquisar</button>
     } @else {
