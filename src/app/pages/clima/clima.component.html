@@ -1,9 +1,26 @@
 <div class="clima-container">
 
   <div class="card">
-    <h1>Bem-Vindo ao Clima Time</h1>
+    @if (dadosClima()) {
+      <h1 class="city">{{ dadosClima()?.name}}</h1>
 
-    <button (click)="navegarParaTelaDePesquisa()">Pesquisar</button>
+      <div class="temp">{{ dadosClima()?.main?.temp | number: '1.0-0' }}°C</div>
+
+      <div class="img-titulo">
+        @let clima = dadosClima()!.weather[0];
+
+        <img class="icon" [src]="'https://openweathermap.org/img/wn/' + clima.icon + '@2x.png'">
+        <p class="desc">{{ clima.description | titlecase }}</p>
+      </div>
+
+
+
+      <button (click)="navegarParaTelaDePesquisa()">Pesquisar</button>
+    } @else {
+      <div class="img-titulo">
+        <p class="desc">Carregando ...</p>
+      </div>
+    }
   </div>
 
 </div>
