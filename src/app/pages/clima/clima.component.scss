@@ -79,5 +79,13 @@
         height: 52px;
       }
     }
+
+    .minmax {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.9);
+    }
   }
 }
