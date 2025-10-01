@@ -3,12 +3,30 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
-    <img src="img/3dd4934a-666a-4b56-94a8-6bbe15bd09ac.png" alt="logotipo" class="logo">
+    @if (dadosClima())  {
+    <h1 class="city">{{ dadosClima()?.name }}</h1>
 
-    <h1>Bem-vindo ao Climaster</h1>
+    <div class="temp">  
+      {{ dadosClima()?.main?.temp | number: '1.0-0'}}°C</div>
+
+    <div class="img-titulo">
+
+      @let clima = dadosClima()!.weather[0];
+
+        <img class="icon" [src]="'https://openweathermap.org/img/wn/' + clima.icon + '@2x.png'" alt="">
+        <p class="desc">{{ clima.description | titlecase}}</p>
+    </div>
+  
+    <div class="minmax">
+      <span>Min {{dadosClima()?.main?.temp_min | number: '1.0-0'}}°C</span>
+      <span>Max {{dadosClima()?.main?.temp_max | number: '1.0-0'}}°C</span>
+    </div>
 
     <button class="btn btn-primary" (click)="buscarClima()">
       Pesquisar clima
     </button>
+  } @else {
+    <p class="desc">Carregando...</p>
+  }
   </section>
 </main>
