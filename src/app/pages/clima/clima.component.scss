@@ -33,14 +33,6 @@
       border-color: rgba(255, 255, 255, 0.25);
     }
 
-    .city {
-      margin: 0 0 8px;
-      font-size: 2rem;
-      font-weight: bold;
-      color: #ffffff;
-      letter-spacing: 0.5px;
-    }
-
     button {
       border: none;
       padding: 16px 32px;
@@ -52,16 +44,7 @@
       background: linear-gradient(135deg, #f9ed69, #f08a5d);
     }
 
-    .temp {
-      font-size: 3.25rem;
-      font-weight: 700;
-      margin: 4px 0 8px;
-      color: #ffffff;
-      line-height: 1;
-      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-    }
-
-    .img-titulo{
+    .img-titulo {
       display: inline-flex;
       align-items: center;
       justify-content: center;

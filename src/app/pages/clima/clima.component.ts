@@ -1,15 +1,18 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { OpenWeatherService } from '../../service/open-weather.service';
+import { OpenWeatherService } from '../../services/open-weather.service';
 import { WeatherResponse } from '../../models/wheater-response.model';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { catchError, of } from 'rxjs';
 import { DecimalPipe, TitleCasePipe } from '@angular/common';
+import { NomeCidadeComponent } from "../../components/nome-cidade/nome-cidade.component";
+import { TempCidadeComponent } from "../../components/temp-cidade/temp-cidade.component";
+import { AppLoadingComponent } from "../../components/app-loading/app-loading.component";
 
 @Component({
   selector: 'app-clima',
   standalone: true,
-  imports: [DecimalPipe, TitleCasePipe],
+  imports: [DecimalPipe, TitleCasePipe, NomeCidadeComponent, TempCidadeComponent, AppLoadingComponent],
   templateUrl: './clima.component.html',
   styleUrls: ['./clima.component.scss']
 })
@@ -28,6 +31,7 @@ export class ClimaComponent {
     ),
     {initialValue: null}
   );
+  mensagemCarregando: string = 'Carregando temperatura'
 
   constructor() { }
 
