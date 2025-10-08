@@ -11,11 +11,12 @@ import { AppLoadingComponent } from "../../components/app-loading/app-loading.co
 import { ImgTituloComponent } from "../../components/img-titulo/img-titulo.component";
 import { TempMinMaxComponent } from "../../components/temp-minmax/temp-minmax.component";
 import { AppBotaoComponent } from "../../components/app-botao/app-botao.component";
+import { AppClimaContainerComponent } from "../../components/clima-container/clima-container.component";
 
 @Component({
   selector: 'app-clima',
   standalone: true,
-  imports: [DecimalPipe, NomeCidadeComponent, TempCidadeComponent, AppLoadingComponent, ImgTituloComponent, TempMinMaxComponent, AppBotaoComponent],
+  imports: [DecimalPipe, NomeCidadeComponent, TempCidadeComponent, AppLoadingComponent, ImgTituloComponent, TempMinMaxComponent, AppBotaoComponent, AppClimaContainerComponent],
   templateUrl: './clima.component.html',
   styleUrls: ['./clima.component.scss']
 })
@@ -34,7 +35,6 @@ export class ClimaComponent {
     ),
     {initialValue: null}
   );
-  mensagemCarregando: string = 'Carregando temperatura'
 
   constructor() { }
 
