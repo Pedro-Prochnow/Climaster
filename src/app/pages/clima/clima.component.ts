@@ -8,11 +8,14 @@ import { DecimalPipe, TitleCasePipe } from '@angular/common';
 import { NomeCidadeComponent } from "../../components/nome-cidade/nome-cidade.component";
 import { TempCidadeComponent } from "../../components/temp-cidade/temp-cidade.component";
 import { AppLoadingComponent } from "../../components/app-loading/app-loading.component";
+import { ImgTituloComponent } from "../../components/img-titulo/img-titulo.component";
+import { TempMinMaxComponent } from "../../components/temp-minmax/temp-minmax.component";
+import { AppBotaoComponent } from "../../components/app-botao/app-botao.component";
 
 @Component({
   selector: 'app-clima',
   standalone: true,
-  imports: [DecimalPipe, TitleCasePipe, NomeCidadeComponent, TempCidadeComponent, AppLoadingComponent],
+  imports: [DecimalPipe, NomeCidadeComponent, TempCidadeComponent, AppLoadingComponent, ImgTituloComponent, TempMinMaxComponent, AppBotaoComponent],
   templateUrl: './clima.component.html',
   styleUrls: ['./clima.component.scss']
 })

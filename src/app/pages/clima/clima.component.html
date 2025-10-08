@@ -10,19 +10,15 @@
         {{ dadosClima()?.main?.temp | number: '1.0-0' }}°C
       </app-temp-cidade>
 
-      <div class="img-titulo">
-        @let clima = dadosClima()!.weather[0];
+      <app-img-titulo [clima]="dadosClima()!.weather[0]">
+      </app-img-titulo>
 
-        <img class="icon" [src]="'https://openweathermap.org/img/wn/' + clima.icon + '@2x.png'">
-        <p class="desc">{{ clima.description | titlecase }}</p>
-      </div>
+      <app-temp-minmax [main]="dadosClima()!.main">
+      </app-temp-minmax>
 
-      <div class="minmax">
-        <span>Min {{dadosClima()?.main?.temp_min | number: '1.0-0'}}°C</span>
-        <span>Max {{dadosClima()?.main?.temp_max | number: '1.0-0'}}°C</span>
-      </div>
-
-      <button (click)="navegarParaTelaDePesquisa()">Pesquisar</button>
+      <app-botao (onClick)="navegarParaTelaDePesquisa()">
+        Pesquisar
+      </app-botao>
     } @else {
       <app-loading [mensagem]="mensagemCarregando"></app-loading>
     }

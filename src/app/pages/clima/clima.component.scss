@@ -32,43 +32,5 @@
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
       border-color: rgba(255, 255, 255, 0.25);
     }
-
-    button {
-      border: none;
-      padding: 16px 32px;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      position: relative;
-      background: linear-gradient(135deg, #f9ed69, #f08a5d);
-    }
-
-    .img-titulo {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin: 8px 0 16px;
-
-      .desc {
-        margin: 0;
-        color: rgba(255, 255, 255, 0.9);
-        font-weight: 500;
-      }
-
-      .icon {
-        width: 52px;
-        height: 52px;
-      }
-    }
-
-    .minmax {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-bottom: 20px;
-      color: rgba(255, 255, 255, 0.9);
-    }
   }
 }
