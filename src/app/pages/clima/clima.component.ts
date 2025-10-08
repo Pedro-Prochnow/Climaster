@@ -1,15 +1,19 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit } from "@angular/core";
 import { Router } from '@angular/router';
-import { OpenWeatherService } from "../service/open-weather.service";
+import { OpenWeatherService } from "../services/open-weather.service";
 import { WeatherResponse } from "../../models/wheater-response.module";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { catchError, of } from "rxjs";
 import { DecimalPipe, TitleCasePipe} from '@angular/common';
+import { NomeCidadeComponent } from "../../components/nome-cidade/nome-cidade.component";
+import { AppLoadingComponent } from "../../components/app-loading/app-loading.component";
+import { ImgTituloComponent } from "../../components/img-titulo/img-titulo.component";
+import { MinMaxComponent } from "../../components/min-max/min-max.component";
 
 @Component({
     selector: 'app-clima',
     standalone: true,
-    imports: [DecimalPipe, TitleCasePipe],
+    imports: [DecimalPipe, NomeCidadeComponent, AppLoadingComponent, ImgTituloComponent, MinMaxComponent],
     templateUrl: './clima.component.html',
     styleUrl: './clima.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush

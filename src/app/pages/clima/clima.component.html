@@ -4,29 +4,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
     @if (dadosClima())  {
-    <h1 class="city">{{ dadosClima()?.name }}</h1>
+    <app-nome-cidade>
+      {{ dadosClima()?.name }}
+    </app-nome-cidade>
 
-    <div class="temp">  
-      {{ dadosClima()?.main?.temp | number: '1.0-0'}}°C</div>
+    <app-nome-cidade>
+      {{ dadosClima()?.main?.temp | number: '1.0-0'}}°C
+    </app-nome-cidade>
+    <!--<h1 class="city">{{ dadosClima()?.name }}</h1>  -->
 
-    <div class="img-titulo">
+    <!--<div class="temp">  
+      {{ dadosClima()?.main?.temp | number: '1.0-0'}}°C</div>-->
 
-      @let clima = dadosClima()!.weather[0];
+    <app-img-titulo [clima]="dadosClima()!.weather[0]">
+    </app-img-titulo>
 
-        <img class="icon" [src]="'https://openweathermap.org/img/wn/' + clima.icon + '@2x.png'" alt="">
-        <p class="desc">{{ clima.description | titlecase}}</p>
-    </div>
-  
-    <div class="minmax">
-      <span>Min {{dadosClima()?.main?.temp_min | number: '1.0-0'}}°C</span>
-      <span>Max {{dadosClima()?.main?.temp_max | number: '1.0-0'}}°C</span>
-    </div>
+    <app-min-max [main]="dadosClima()!.main">
+    </app-min-max>
 
-    <button class="btn btn-primary" (click)="buscarClima()">
-      Pesquisar clima
-    </button>
+    <app-button (onClick)="navegarParaTelaDePesquisa()">
+      Pesquisar
+    </app-button>
   } @else {
-    <p class="desc">Carregando...</p>
+    <app-loading-cidade mensagem="carregando temperatura"></app-loading-cidade>
   }
   </section>
 </main>

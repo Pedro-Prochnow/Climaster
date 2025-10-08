@@ -1,0 +1,15 @@
+.img-titulo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  .desc {
+    margin: 4px 0 16px 0;
+    font-weight: 500;
+  }
+
+  .icon {
+    width: 52px;
+    height: 52px;
+  }
+}
