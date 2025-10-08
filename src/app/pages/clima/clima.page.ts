@@ -1,9 +1,5 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { OpenWeatherService } from '../../services/open-weather.service';
-import { WeatherResponse } from '../../models/wheater-response.model';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { catchError, of } from 'rxjs';
 import { AppBotaoComponent } from "../../components/app-botao/app-botao.component";
 import { AppClimaContainerComponent } from "../../components/clima-container/clima-container.component";
 
@@ -11,8 +7,8 @@ import { AppClimaContainerComponent } from "../../components/clima-container/cli
   selector: 'app-clima',
   standalone: true,
   imports: [AppBotaoComponent, AppClimaContainerComponent],
-  templateUrl: './clima.component.html',
-  styleUrls: ['./clima.component.scss']
+  templateUrl: './clima.page.html',
+  styleUrls: ['./clima.page.scss']
 })
 export class ClimaComponent {
 

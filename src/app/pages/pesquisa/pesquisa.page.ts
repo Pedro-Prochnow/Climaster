@@ -3,8 +3,8 @@ import { AppClimaContainerComponent } from "../../components/clima-container/cli
 
 @Component({
   selector: 'app-pesquisa',
-  templateUrl: './pesquisa.component.html',
-  styleUrls: ['./pesquisa.component.scss'],
+  templateUrl: './pesquisa.page.html',
+  styleUrls: ['./pesquisa.page.scss'],
   imports: [AppClimaContainerComponent]
 })
 export class PesquisaComponent implements OnInit {
