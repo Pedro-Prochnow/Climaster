@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { AppClimaContainerComponent } from "../../components/clima-container/clima-container.component";
 
 @Component({
@@ -7,11 +7,9 @@ import { AppClimaContainerComponent } from "../../components/clima-container/cli
   styleUrls: ['./pesquisa.page.scss'],
   imports: [AppClimaContainerComponent]
 })
-export class PesquisaComponent implements OnInit {
+export class PesquisaComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  cidadePesquisada = signal ('Dois Vizinhos');
+  
 
 }

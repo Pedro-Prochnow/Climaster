@@ -1,8 +1,10 @@
 :host {
-  .temperatura {
-    font-size: 3.25rem;
-    font-weight: 700;
-    margin: 4px 0 10px 0;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
-  }
+  .temp {
+      font-size: 3.25rem;
+      font-weight: 700;
+      margin: 4px 0 8px;
+      color: #ffffff;
+      line-height: 1;
+      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    }
 }
