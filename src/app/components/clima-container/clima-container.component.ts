@@ -23,6 +23,8 @@ export class AppClimaContainerComponent {
   mensagemCarregando: string = 'Carregando temperatura'
   openWeather = inject(OpenWeatherService);
 
+   cidade = input.required<string>();
+
   dadosClima = toSignal<WeatherResponse | null>(
     toObservable(this.cidade).pipe(
       switchMap(cidade => this.openWeather.buscarInfoClimaCidade(cidade)),
