@@ -6,9 +6,9 @@ import { TempMinMaxComponent } from "../temp-minmax/temp-minmax.component";
 import { AppLoadingComponent } from "../app-loading/app-loading.component";
 import { WeatherResponse } from '../../models/wheater-response.model';
 import { DecimalPipe } from '@angular/common';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { OpenWeatherService } from '../../services/open-weather.service';
-import { catchError, of } from 'rxjs';
+import { catchError, of, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-clima-container',
@@ -24,10 +24,10 @@ export class AppClimaContainerComponent {
   openWeather = inject(OpenWeatherService);
 
   dadosClima = toSignal<WeatherResponse | null>(
-    this.openWeather.buscarInfoClimaCidadeAtual()
-    .pipe(
-      catchError(err => {
-        console.error('Erro ao buscar dados do clima', err);
+    toObservable(this.cidade).pipe(
+      switchMap(cidade => this.openWeather.buscarInfoClimaCidade(cidade)),
+      catchError((err) => {
+        console.error('Erro ao buscar dados do clima:', err);
         return of(null);
       })
     ),

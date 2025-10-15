@@ -1,7 +1,7 @@
 import {inject, Injectable} from '@angular/core';
 import {WeatherResponse} from '../models/wheater-response.model';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +15,9 @@ export class OpenWeatherService {
   constructor() {
   }
 
-  buscarInfoClimaCidadeAtual(): Observable<WeatherResponse> {
-
+  buscarInfoClimaCidade(cidade: string): Observable<WeatherResponse> {
     const urlCompleta =
-      this.apiUrl + '?q=Dois%20Vizinhos,PR,BR&appid='
+      this.apiUrl + '?q=' + encodeURIComponent(cidade) + '&appid='
       + this.apiKey + '&lang=pt_br&units=metric';
 
     return this.http.get<WeatherResponse>(urlCompleta);

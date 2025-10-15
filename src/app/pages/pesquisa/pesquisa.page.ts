@@ -10,6 +10,10 @@ import { AppClimaContainerComponent } from "../../components/clima-container/cli
 export class PesquisaComponent {
 
   cidadePesquisada = signal ('Dois Vizinhos');
-  
 
+  pesquisar(nomeCidade: string) {
+    if (nomeCidade.trim()) {
+      this.cidadePesquisada.set(nomeCidade.trim());
+    }
+  }
 }
